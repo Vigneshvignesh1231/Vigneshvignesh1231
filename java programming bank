@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class Bankdetails
+{
+public static void main(String[] args)
+{
+String name,accno;
+char type;
+Float bal,addamt,withamt;
+int n;
+Scanner input=new Scanner(System.in);
+System.out.print("Enter Name: ");
+name=input.nextLine();
+System.out.println("Enter Account Number: ");
+accno=input.nextLine();
+System.out.print("Enter Savings(S)/Current(C): ");
+type=input.next().charAt(0);
+System.out.print("Enter Balance Amount: ");
+bal=input.nextFloat();
+
+System.out.println("Menu.");
+System.out.println("1. Display Bank Details.");
+System.out.println("2. Deposite Amount.");
+System.out.println("3. Display Balance and Withdraw.");
+System.out.println("4. Exit");
+System.out.print("Enter Your Choice: ");
+n=input.nextInt();
+
+if (n==1){
+System.out.println("Bank Details...");
+System.out.println("Name of Depositer: "+name);
+System.out.println("Account Number: "+accno);
+System.out.println("Account Type: "+type);
+System.out.println("Balance : "+bal);
+}
+
+else if(n==2){
+System.out.println("Deposite Amount menu: ");
+System.out.println("Enter adding amount: ");
+addamt=input.nextFloat();
+System.out.println("Total amount after deposite is: "+ (addamt+bal));
+}
+
+else if(n==3){
+System.out.println("Withdraw Menu:");
+System.out.println("Balance Available: "+bal);
+System.out.println("Enter Amount to Be withdraw: ");
+withamt=input.nextFloat();
+else if((bal-withamt)<500){
+System.out.println("Entered amount is not valid since Minimum Balance is required.");
+}
+else {
+System.out.println("Balance After Withdrawl: "+(bal-withamt));
+}
+}
+
+else if(n==4){
+System.out.println("Successfully Exited.");
+}
+
+else{
+System.out.println("Wrong Input");
+}
+}
+}
